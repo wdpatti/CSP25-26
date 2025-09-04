@@ -4,7 +4,7 @@ last_name = "Doe"
 
 full_name = f"{first_name} {last_name}"
 
-greeting = "Hellow my name is " + full_name + " and I am " + str(age) + " years old."
+greeting = "Hello my name is " + full_name + " and I am " + str(age) + " years old."
 
 print(greeting)
 
