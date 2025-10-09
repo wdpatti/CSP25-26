@@ -1,0 +1,1 @@
+oxygen: low, water: low, food: full, fuel: high, tools: unavailable, medkits: low, spare parts: low
