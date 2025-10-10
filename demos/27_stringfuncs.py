@@ -24,7 +24,7 @@ for i in inventory.split(", "):
         a = "low"
     elif i.split(": ")[1] == "medium":
         a = "low" 
-    elif i.split(": ")[1] == "high":
+    elif i.split(": ")[1] == "high" or i.split(": ")[1] == "full":
         a = "medium" 
     elif i.split(": ")[1] == "available":
         a = "unavailable"
@@ -35,11 +35,20 @@ for i in inventory.split(", "):
     reduced_inventory = reduced_inventory + i.split(": ")[0] + ": " + a + ", "
 
 reduced_inventory = reduced_inventory[:-2]
+print("\nReduced Inventory: ")
+print(reduced_inventory)
+
+update = input("\nPrint the resource you want to update: ")
+new_status = input("Print the new status (low, medium, high, full, available, unavailable): ")
+
+for i in reduced_inventory.split(", "):
+    if i.split(": ")[0] == update:
+        reduced_inventory = reduced_inventory.replace(i, update + ": " + new_status)
 
 inventory_length = len(inventory)
 print("\nThe total number of characters in the inventory description is:", inventory_length)
 
-updated_inventory = inventory.replace("food: low", "food: full")
+updated_inventory = reduced_inventory.replace("food: low", "food: full")
 print("\nUpdated inventory: ")
 print(updated_inventory)
 
@@ -51,7 +60,11 @@ inventory_summary = updated_inventory[:30]
 print("\nInventory Summary (First 2 Resources):")
 print(inventory_summary)
 
+print("\nInventory report:")
+for i in updated_inventory.split(", "):
+    print(i)
+
 # save inventory
 f = open("files/inventory.txt", "w")
-f.write(reduced_inventory)
+f.write(updated_inventory)
 f.close()
