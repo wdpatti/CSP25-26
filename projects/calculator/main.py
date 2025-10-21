@@ -20,8 +20,8 @@ while True:
     if num2 == 0:
         print("Because the second number is zero, the quotient and modulo calculations are not possible.")
     else:
-        quotient = num1 / num2
-        print(f"The quotient of {str(num1)} and {str(num2)} is {str(quotient)}.")
+        quotient = num1 // num2
+        print(f"The quotient (floor division) of {str(num1)} and {str(num2)} is {str(quotient)}.")
         modulo = num1 % num2
         print(f"The remainder after dividing {str(num1)} and {str(num2)} is {str(modulo)}.")
 
