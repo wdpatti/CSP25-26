@@ -23,7 +23,7 @@ while True:
         quotient = num1 // num2
         print(f"The quotient (floor division) of {str(num1)} and {str(num2)} is {str(quotient)}.")
         modulo = num1 % num2
-        print(f"The remainder after dividing {str(num1)} and {str(num2)} is {str(modulo)}.")
+        print(f"The remainder after dividing {str(num1)} by {str(num2)} is {str(modulo)}.")
 
     if input("Would you like to perform these calculations on another set of numbers? (y/n)").lower() in ["no", "n"]:
         break
