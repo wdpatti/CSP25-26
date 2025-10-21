@@ -2,6 +2,7 @@
 while True:
     #Repeat until the numbers are both integers
     while True:
+        #If these numbers are very large or very small nothing should change due to the nature of python's floating point variables
         num1 = input("Enter the first number: ")
         num2 = input("Enter the second number: ")
 
