@@ -30,8 +30,8 @@ t.pendown()
 t.pensize(3)
 t.forward(200) # Line separaIng the body
 
-spots_posiIons = [(-50, 50), (50, 50), (-75, 0), (75, 0), (-50, -50), (50, -50)]
-for spot_x, spot_y in spots_posiIons:
+spots_positions = [(-50, 50), (50, 50), (-75, 0), (75, 0), (-50, -50), (50, -50)]
+for spot_x, spot_y in spots_positions:
     t.penup()
     t.goto(-100 + spot_x, 50 + spot_y)
     t.pendown()
@@ -40,9 +40,8 @@ for spot_x, spot_y in spots_posiIons:
     t.circle(15) # Draw the spots
     t.end_fill()
 
-legs_posiIons = [(-100, 50), (-100, 0), (-100, -50), (100, 50), (100, 0),
-(100, -50)]
-for leg_x, leg_y in legs_posiIons:
+legs_positions = [(-100, 50), (-100, 0), (-100, -50), (100, 50), (100, 0), (100, -50)]
+for leg_x, leg_y in legs_positions:
     t.penup()
     t.goto(-100 + leg_x, 50 + leg_y)
     t.pendown()
