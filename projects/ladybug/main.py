@@ -7,12 +7,12 @@ turtle.setup(width=600, height=600)
 t = turtle.Turtle()
 t.pensize(2)
 
-for x_off, y_off in [(-50, -50), (250, -50), (-50, -335), (250, -335)]:
+for x_off, y_off, color in [(-50, -50, ("red", "black")), (250, -50, ("yellow", "blue")), (-50, -335, ("orange", "red")), (250, -335, ("purple", "green"))]:
     t.setheading(0)
     t.penup()
     t.goto(x_off + -100, y_off + 50)
     t.pendown()
-    t.fillcolor("red")
+    t.fillcolor(color[0])
     t.begin_fill()
     t.circle(100) # Draw a larger body as a circle
     t.end_fill()
@@ -32,15 +32,19 @@ for x_off, y_off in [(-50, -50), (250, -50), (-50, -335), (250, -335)]:
     t.pensize(3)
     t.forward(175) # Line separating the body
 
+    t.color(color[1])
+
     spots_positions = [(-50, 50), (50, 50), (-75, 0), (75, 0), (-50, -50), (50, -50)]
     for spot_x, spot_y in spots_positions:
         t.penup()
         t.goto(x_off + -115 + spot_x, y_off + 150 + spot_y)
         t.pendown()
-        t.fillcolor("black")
+        t.fillcolor(color[1])
         t.begin_fill()
         t.circle(15) # Draw the spots
         t.end_fill()
+
+    t.color("black")
 
     legs_positions = [(-85, 50), (-100, 0), (-85, -50), (85, 50), (100, 0), (85, -50)]
     for leg_x, leg_y in legs_positions:
