@@ -7,7 +7,7 @@ turtle.setup(width=600, height=600)
 t = turtle.Turtle()
 t.pensize(2)
 
-for x_off, y_off in [(-50, -50), (250, -50), (-50, -325), (250, -325)]:
+for x_off, y_off in [(-50, -50), (250, -50), (-50, -335), (250, -335)]:
     t.setheading(0)
     t.penup()
     t.goto(x_off + -100, y_off + 50)
@@ -51,12 +51,12 @@ for x_off, y_off in [(-50, -50), (250, -50), (-50, -325), (250, -325)]:
         t.forward(50) # Draw the legs
 
     t.penup()
-    t.goto(x_off + -115, y_off + 275) # LeY antenna position
+    t.goto(x_off + -95, y_off + 275) # LeY antenna position
     t.setheading(60)
     t.pendown()
     t.forward(60)
     t.penup()
-    t.goto(x_off + -90, y_off + 275) # LeY antenna position
+    t.goto(x_off + -105, y_off + 275) # LeY antenna position
     t.setheading(120)
     t.pendown()
     t.forward(60)
