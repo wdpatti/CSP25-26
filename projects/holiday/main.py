@@ -73,3 +73,12 @@ holiday_functions = {
     "Yom Kippur": yom_kippur,
     "Rosh Hashanah": rosh_hashanah
 }
+
+def display_activities(holiday_name):
+    if holiday_name in holiday_functions:
+        print(f"\nActivities for {holiday_name}:")
+        activities = holiday_functions[holiday_name]() #Call func to get activities
+        for a in activities:
+            print("-" + a)
+    else:
+        print(holiday_name + " is not in the list of holidays.")
