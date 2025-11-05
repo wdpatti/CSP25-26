@@ -62,6 +62,9 @@ def yom_kippur():
 def rosh_hashanah():
     return ["Attend synagogue services", "Blow the shofar", "Eat symbolic foods like apples and honey", "Pray for a good year ahead"]
 
+def halloween(): #BONUS FALL HOLIDAY FUNC
+    return ["Buy pumpkins", "Decorate the house", "Buy candy", "Tell spooky stories"]
+
 holiday_functions = {
     "Diwali": diwali,
     "Thanksgiving": thanksgiving,
@@ -71,7 +74,8 @@ holiday_functions = {
     "Rememberance Day": rememberance_day,
     "Mid-Autumn Festival": mid_autumn_festival,
     "Yom Kippur": yom_kippur,
-    "Rosh Hashanah": rosh_hashanah
+    "Rosh Hashanah": rosh_hashanah,
+    "Halloween": halloween #BONUS FUNCTION
 }
 
 def display_activities(holiday_name):
