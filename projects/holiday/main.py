@@ -34,3 +34,42 @@ for _ in range(30): # Draw 30 fireworks
         fireworks.right(30) # 360 degrees divided by 12 lines
 
 screen.exitonclick()
+
+def diwali():
+    return ["Light diyas", "Prepare sweets", "Fireworks", "Family gathering"]
+
+def thanksgiving():
+    return ["Cook a turkey", "Family dinner", "Express gratitude", "Watch a parade", "Watch football"]
+
+def day_of_the_dead():
+    return ["Visit graves", "Make sugar skulls", "Create altars", "Share family stories"]
+
+def guy_fawkes_day():
+    return ["Bonfires", "Fireworks", "Burning effigies", "Sing traditional songs"]
+
+def st_andrews_day():
+    return ["Ceilidh dancing", "Traditional Scottish meal", "Attend events", "Celebrate Scottish culture"]
+
+def rememberance_day():
+    return ["Attend ceremonies", "Moment of silence", "Wear poppies", "Thank veterans"]
+
+def mid_autumn_festival():
+    return ["Family reunion", "Eat mooncakes", "Moon worship", "Lantern lighting"]
+
+def yom_kippur():
+    return ["Day of fasting", "Attend synagogue services", "Reflect on past actions", "Seek forgiveness"]
+
+def rosh_hashanah():
+    return ["Attend synagogue services", "Blow the shofar", "Eat symbolic foods like apples and honey", "Pray for a good year ahead"]
+
+holiday_functions = {
+    "Diwali": diwali,
+    "Thanksgiving": thanksgiving,
+    "Day of the Dead": day_of_the_dead,
+    "Guy Fawkes Day": guy_fawkes_day,
+    "St. Andrew's Day": st_andrews_day,
+    "Rememberance Day": rememberance_day,
+    "Mid-Autumn Festival": mid_autumn_festival,
+    "Yom Kippur": yom_kippur,
+    "Rosh Hashanah": rosh_hashanah
+}
