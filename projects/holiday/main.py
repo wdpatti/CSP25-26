@@ -86,3 +86,14 @@ def display_activities(holiday_name):
             print("-" + a)
     else:
         print(holiday_name + " is not in the list of holidays.")
+
+print("Do you celebrate and of the following holidays?")
+for h in holiday_functions.keys():
+    print("-" + h)
+
+user_holiday = input("\nIf you celebrate one of these holidays, please enter its name, or press Enter to skip: ").strip()
+
+if user_holiday in holiday_functions:
+    display_activities(user_holiday)
+else:
+    print(user_holiday + " is not recognized as one of the holidays in our list.")
