@@ -97,3 +97,27 @@ if user_holiday in holiday_functions:
     display_activities(user_holiday)
 else:
     print(user_holiday + " is not recognized as one of the holidays in our list.")
+
+def display_celebration(gif_path=None):
+    # Set up the Turtle screen
+    screen = turtle.Screen()
+    screen.title("Fall Celebrations")
+    screen.bgcolor("black")
+    # Set background GIF if a path is provided
+    if gif_path:
+        try:
+            screen.addshape(gif_path) # Register the GIF shape
+            background_turtle = turtle.Turtle()
+            background_turtle.shape(gif_path)
+            background_turtle.penup()
+            background_turtle.goto(0, 0)
+        except turtle.TurtleGraphicsError:
+            print("Error: The file could not be loaded. Please ensure it's a valid .gif file.")
+        return
+    
+    # Add existing fireworks and text code here
+
+gif_path = input("Enter the path to a GIF image for the background, or press Enter to skip: ").strip()
+if not gif_path:
+    gif_path = None #Use no background if no input is given
+
