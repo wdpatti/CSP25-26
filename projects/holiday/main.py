@@ -113,7 +113,8 @@ def display_celebration(gif_path=None):
             background_turtle.goto(0, 0)
         except turtle.TurtleGraphicsError:
             print("Error: The file could not be loaded. Please ensure it's a valid .gif file.")
-        return
+    
+    screen.exitonclick()
     
     # Add existing fireworks and text code here
 
@@ -121,3 +122,4 @@ gif_path = input("Enter the path to a GIF image for the background, or press Ent
 if not gif_path:
     gif_path = None #Use no background if no input is given
 
+display_celebration(gif_path)
