@@ -2,28 +2,32 @@ import turtle
 from PIL import Image
 import random as celebrations # Renaming random library for thematic purposes
 
+#PILLOW BONUS
 def convert_to_gif(img_path):
     img = Image.open(img_path)
     gif_path = "converted_image.gif"
     img.save(gif_path, format="GIF")
     return gif_path
 
+#Defines celebration function
 def display_celebration(gif_path=None):
     # Set up the Turtle screen
     screen = turtle.Screen()
     screen.title("Fall Celebrations")
     screen.bgcolor("black")
 
+    #Creates new background turtle
     background_turtle = turtle.Turtle()
     # Set background GIF if a path is provided
     if gif_path:
         try:
             screen.addshape(gif_path) # Register the GIF shape
             background_turtle = turtle.Turtle()
-            background_turtle.shape(gif_path)
+            background_turtle.shape(gif_path) #Set the background to the gif
             background_turtle.penup()
             background_turtle.goto(0, 0)
         except turtle.TurtleGraphicsError:
+            #Error handling
             print("Error: The file could not be loaded. Please ensure it's a valid .gif file.")
     
     # Create a turtle for text
@@ -57,6 +61,7 @@ def display_celebration(gif_path=None):
 
     screen.exitonclick()
 
+#Define all of the various holidays as functions that return lists of activities
 def diwali():
     return ["Light diyas", "Prepare sweets", "Fireworks", "Family gathering"]
 
@@ -87,6 +92,7 @@ def rosh_hashanah():
 def halloween(): #BONUS FALL HOLIDAY FUNC
     return ["Buy pumpkins", "Decorate the house", "Buy candy", "Tell spooky stories"]
 
+#Dict of holiday functions
 holiday_functions = {
     "Diwali": diwali,
     "Thanksgiving": thanksgiving,
@@ -100,6 +106,7 @@ holiday_functions = {
     "Halloween": halloween #BONUS FUNCTION
 }
 
+#Defines funciton to display holiday activities
 def display_activities(holiday_name):
     if holiday_name in holiday_functions:
         print(f"\nActivities for {holiday_name}:")
@@ -109,10 +116,12 @@ def display_activities(holiday_name):
     else:
         print(holiday_name + " is not in the list of holidays.")
 
+#Gives the user holiday options
 print("Do you celebrate any of the following holidays?")
 for h in holiday_functions.keys():
     print("-" + h)
 
+#Ask user for holiday input and display the activities associated with that holiday if it exists
 user_holiday = input("\nIf you celebrate one of these holidays, please enter its name, or press Enter to skip: ").strip()
 
 if user_holiday in holiday_functions:
@@ -120,12 +129,13 @@ if user_holiday in holiday_functions:
 else:
     print(user_holiday + " is not recognized as one of the holidays in our list.")
 
+#Ask user for image input and process it if needed
 img_path = input("Enter the path to an image (PNG, JPEG, JPG, GIF) for the background, or press Enter to skip: ").strip()
 if not img_path:
     gif_path = None #Use no background if no input is given
 elif img_path.lower().endswith(('.jpg', '.jpeg', '.png')):
-    gif_path = convert_to_gif(img_path)
+    gif_path = convert_to_gif(img_path) #BONUS PILLOW for personal images - If the image if a jpg, jpeg, or png, convert it to a gif and set the gifpath to that 
 else:
-    gif_path = img_path
+    gif_path = img_path #If the gifpath is anything else just set the gifpath to the provided path
 
-display_celebration(gif_path)
+display_celebration(gif_path) #Runs the display procedure from above
