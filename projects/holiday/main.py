@@ -1,17 +1,18 @@
+#Importing required libraries
 import turtle
 from PIL import Image
 import random as celebrations # Renaming random library for thematic purposes
 
 #PILLOW BONUS
 def convert_to_gif(img_path):
-    img = Image.open(img_path)
-    gif_path = "converted_image.gif"
+    img = Image.open(img_path) #Open the inputted image from the path
+    gif_path = "converted_image.gif" #Save image as a gif
     img.save(gif_path, format="GIF")
-    return gif_path
+    return gif_path #Returns path of new file
 
 #Defines celebration function
 def display_celebration(gif_path=None):
-    # Set up the Turtle screen
+    # Set up the Turtle screen and add title and background color
     screen = turtle.Screen()
     screen.title("Fall Celebrations")
     screen.bgcolor("black")
@@ -25,7 +26,7 @@ def display_celebration(gif_path=None):
             background_turtle = turtle.Turtle()
             background_turtle.shape(gif_path) #Set the background to the gif
             background_turtle.penup()
-            background_turtle.goto(0, 0)
+            background_turtle.goto(0, 0) #Reset turtle at 0,0
         except turtle.TurtleGraphicsError:
             #Error handling
             print("Error: The file could not be loaded. Please ensure it's a valid .gif file.")
@@ -47,7 +48,7 @@ def display_celebration(gif_path=None):
     colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "cyan"]
     for _ in range(30): # Draw 30 fireworks
         fireworks.penup()
-        x = celebrations.randint(-200, 200)
+        x = celebrations.randint(-200, 200) #Choose a random location for the firework
         y = celebrations.randint(-200, 200)
         fireworks.goto(x, y)
         fireworks.pendown()
@@ -112,7 +113,7 @@ def display_activities(holiday_name):
         print(f"\nActivities for {holiday_name}:")
         activities = holiday_functions[holiday_name]() #Call func to get activities
         for a in activities:
-            print("-" + a)
+            print("-" + a) #Print each activity seperated by hyphens
     else:
         print(holiday_name + " is not in the list of holidays.")
 
@@ -122,15 +123,14 @@ for h in holiday_functions.keys():
     print("-" + h)
 
 #Ask user for holiday input and display the activities associated with that holiday if it exists
-user_holiday = input("\nIf you celebrate one of these holidays, please enter its name, or press Enter to skip: ").strip()
-
+user_holiday = input("\nIf you celebrate one of these holidays, please enter its name, or press Enter to skip: ").strip() #Strips input of unnecessary spaces
 if user_holiday in holiday_functions:
     display_activities(user_holiday)
 else:
-    print(user_holiday + " is not recognized as one of the holidays in our list.")
+    print(user_holiday + " is not recognized as one of the holidays in our list.") #Notify user if holiday does not exist
 
 #Ask user for image input and process it if needed
-img_path = input("Enter the path to an image (PNG, JPEG, JPG, GIF) for the background, or press Enter to skip: ").strip()
+img_path = input("Enter the path to an image (PNG, JPEG, JPG, GIF) for the background, or press Enter to skip: ").strip() #Strips input of unnecessary spaces
 if not img_path:
     gif_path = None #Use no background if no input is given
 elif img_path.lower().endswith(('.jpg', '.jpeg', '.png')):
