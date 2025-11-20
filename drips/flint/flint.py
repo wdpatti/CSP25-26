@@ -16,7 +16,7 @@ def get_input(): # Function to get input
     user_input = "" # Starting with empty input
     while True: # Repeat until broken
         try:
-            user_input = float(input("Please enter your grade.")) # Get input in float form to handle decimals
+            user_input = float(input("Please enter your grade: ")) # Get input in float form to handle decimals
             if user_input < 0 or user_input > 100: # checking the the grade is valid even further
                 print("Please enter a grade from 0-100.")
                 continue
